@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+       
+            background-color:aqua;
+            width: 200px;
+            height:150px;
+            margin-top:5px;
+            text-align:center;
+            margin:10px
+        }
+.main{
+
+        display:flex;
+        justify-content: center;
+}
+.content{
+        padding-top:15px;
+}
+input{
+            width:150px;
+}
+.result{
+    margin-top:50px;
+        text-align:center;
+}
+    </style>
+</head>
+<body>
+
+    <div class="main" >
+        <div class="card">
+            <div class="content">
+            <h4>Shirt</h4>
+            <p>Price: <span id="shirtPrice">400</span></p>
+            <input type="number" id="shirtQuantity">
+            <button onclick="addCart()">Add</button>
+            <h1 id="shirtTotal">
+
+            </h1>
+        </div>
+        </div>
+        <div class="card">
+            <div class="content">
+            <h4>Pant</h4>
+            <p>Price: <span id="pantPrice">600</span></p>
+            <input type="number" id="pantQuantity">
+            <button onclick="addPant()">Add</button>
+            <h1 id="pantTotal">
+
+            </h1>
+        </div>
+        </div>
+        <div class="card">
+            <div class="content">
+            <h4>Glasses</h4>
+            <p>Price: <span id="glassPrice">300</span></p>
+            <input type="number" id="glassQuantity">
+            </div>
+            <button onclick="addGlass()">Add</button>
+            <h1 id="glassTotal">
+
+            </h1>
+        </div>
+        <br>
+    </div>
+
+    <div class="result">
+        <button onclick="checkout()">CheckOut</button>
+        <h3 id="checkout">
+
+        </h3>
+    </div>
+
+    <script>
+
+        function addCart(){
+            var shirtTotal = document.getElementById("shirtTotal");
+         var shirt = parseInt(document.getElementById("shirtPrice").innerText);
+        var shirtQuantity  = parseInt(document.getElementById("shirtQuantity").value);
+        shirtSum = shirt*shirtQuantity;
+        shirtTotal.innerHTML = shirtSum;
+        }
+        function addPant(){
+        var pantTotal = document.getElementById("pantTotal");
+         var pantPrice = parseInt(document.getElementById("pantPrice").innerText);
+        var pantQuantity  = parseInt(document.getElementById("pantQuantity").value);
+        pantSum = pantPrice*pantQuantity;
+        pantTotal.innerHTML = pantSum;
+        }
+        function addGlass(){
+        var glassTotal = document.getElementById("glassTotal");
+         var glassPrice = parseInt(document.getElementById("glassPrice").innerText);
+        var glassQuantity  = parseInt(document.getElementById("glassQuantity").value);
+        glassSum = glassPrice*glassQuantity;
+        glassTotal.innerHTML = glassSum;
+        }
+        function checkout(){
+
+      
+     document.getElementById("checkout").innerHTML= sum;
+                }
+        
+
+    </script>
+
+</body>
+</html>
